@@ -7,6 +7,8 @@ public class Main {
         System.out.println();
         var someNewString = Main.reverseString2(someString, "");
         System.out.println(someNewString);
+        var someNewString2 = Main.reverseString3(someString);
+        System.out.println(someNewString2);
     }
 
     public static void printRecursively(String string) {
@@ -32,6 +34,15 @@ public class Main {
             result = result + string.charAt(0);
         }
 
+        return result;
+    }
+
+    public static String reverseString3(String s) {
+        String result = "";
+        if(s.length() > 0) {
+            result = reverseString3(s.substring(1));
+            result = result + s.charAt(0);
+        }
         return result;
     }
 }
